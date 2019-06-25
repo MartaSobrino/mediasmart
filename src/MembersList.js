@@ -15,7 +15,7 @@ class MemberList extends React.Component{
             </div>
             <div className="bottom__information">
               <p className="item__age">{`${item.age} years old`}</p>
-              <Link to={`/detail/${item.id}`} className="more__info">Más información</Link>
+              <Link to={`/detail/${item.id}`} className="more__info">More info</Link>
             </div>
           </li>
         )}

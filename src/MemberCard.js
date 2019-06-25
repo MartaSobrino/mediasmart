@@ -24,7 +24,7 @@ class MemberCard extends React.Component {
               <p className="member__bio"> <span className="bold">Bio: </span>{data.bio}</p>
             </div>
             <div className="back__container">
-              <Link className="back__to" to="/">Cerrar</Link>            
+              <Link className="back__to" to="/">Close</Link>            
             </div>
           </div>
           :
