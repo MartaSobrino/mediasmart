@@ -1,28 +1,71 @@
 import React from 'react';
 import fetch from 'isomorphic-fetch';
+import logo from './images/logo-mediasmart.png';
+import MemberList from './MembersList';
+import MemberCard from './MemberCard';
+import {Route, Switch} from 'react-router-dom';
+import './Header.scss';
+import './App.scss';
 
-async function onClick () {
-  const data = await fetch('http://work.mediasmart.io?page=1&page_size=20', {
-    headers: {
-       authorization: 'mediasmart2019'
-     }
-    });
-    console.log(JSON.stringify(data.json()))
-  // alert((await data.json()).message);
-}
+class App extends React.Component{
+  constructor(props) {
+    super(props);
+      this.state= {
+        dataList: []
+      };
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <div className="App-logo" alt="logo">#</div>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <button onClick={onClick}>Click me</button>
+  async FETCH() {
+    await fetch('http://work.mediasmart.io?page=1&page_size=20', 
+      {
+      headers: {
+        authorization: 'mediasmart2019'
+      }
+      })
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          dataList: data
+        });
+      });
+  }
+
+  componentDidMount(){
+    this.FETCH();
+  }
+
+  render(){
+    const {dataList} = this.state;
+    return (
+      <div className="container">
+      <header className="header">
+        <h1 className="logo__container">
+          <img className="mediasmart__logo" src={logo} alt="mediamart logotipo"/>
+        </h1>
+        <h2 className="header__members">Members</h2>
       </header>
-    </div>
-  );
+      <main>
+        <Switch>
+          <Route exact path="/" render={() =>
+            <MemberList
+            List={dataList}
+            />  
+          }
+          />
+          <Route
+            path="/detail/:id"
+            render={props => 
+              <MemberCard 
+              match={props.match}
+                List={dataList}
+              />
+            }
+          />
+        </Switch>
+      </main>
+      </div>
+    );
+  }
 }
 
 export default App;

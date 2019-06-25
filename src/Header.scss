@@ -1,0 +1,43 @@
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (min-width: 1280px) {
+    flex-direction: row;
+    border-bottom: 5px solid #FF324B;
+  }
+  .logo__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media screen and (min-width: 1280px) {
+      margin: 2%;
+      width: 30%;
+    }
+  }
+  .mediasmart__logo {
+    width: 90%;
+  }
+  .header__members{
+    width: 100%;
+    background: #FF324B;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px; 
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    @media screen and (min-width: 768px) {
+      margin-bottom: 30px;
+    }
+    @media screen and (min-width: 1280px) {
+      margin-bottom: 0;
+      background: white;
+      color: #FF324B;
+      font-size: 50px;
+      text-align: right;
+      padding: 0 5%;
+    }
+  }
+}

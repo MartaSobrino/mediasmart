@@ -1,0 +1,26 @@
+.member__image {
+  max-width: 200px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.main__image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5%;
+}
+.card__container {
+  width: 90%;
+  margin: 0 auto;
+  border: 5px solid #FF324B;
+  padding: 5%;
+  box-sizing: border-box;
+} 
+.main__information {
+  border-top: 2px solid #FF324B;
+  border-bottom: 2px solid #FF324B;
+  p {
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
