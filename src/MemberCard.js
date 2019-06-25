@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './MemberCard.scss';
 
 class MemberCard extends React.Component {
@@ -11,19 +12,23 @@ class MemberCard extends React.Component {
       <React.Fragment>
         {data ? 
           <div className="card__container">
-          <div className="main__image">
-            <img className="member__image" src={data.image} alt={data.name}/>
+            <div className="main__image">
+              <img className="member__image" src={data.image} alt={data.name}/>
+              <div className="main__information">
+                <p className="member__name"><span className="bold">Name: </span>{data.name}</p>
+                <p className="member__age"><span className="bold">Age: </span>{data.age}</p>
+              </div>
+            </div>
+            
+            <div className="bio__information">
+              <p className="member__bio"> <span className="bold">Bio: </span>{data.bio}</p>
+            </div>
+            <div className="back__container">
+              <Link className="back__to" to="/">Cerrar</Link>            
+            </div>
           </div>
-          <div className="main__information">
-            <p className="member__name">{`Name: ${data.name}`}</p>
-            <p className="member__age">{`Age: ${data.age}`}</p>
-          </div>
-          <div className="bio__information">
-            <p className="member__bio">{`Bio: ${data.bio}`}</p>
-          </div>
-        </div>
-        :
-        <p>No hay datos disponibles</p>
+          :
+          <p>No hay datos disponibles</p>
         }
       </React.Fragment>
     );

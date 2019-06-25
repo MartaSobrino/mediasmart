@@ -57,7 +57,7 @@ class App extends React.Component{
             render={props => 
               <MemberCard 
               match={props.match}
-                List={dataList}
+              List={dataList}
               />
             }
           />
