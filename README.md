@@ -31,3 +31,4 @@ The endpoint needs an authorization parameter. To obtain it you have to look at 
 
 `curl -v http://work.mediasmart.io/`
 
+

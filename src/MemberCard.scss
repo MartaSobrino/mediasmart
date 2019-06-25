@@ -45,6 +45,9 @@
     color: white;
     width: 90%;
     text-align: center;
+    &:hover {
+      box-shadow: 0 1px 3px 0 rgba(60,64,67,0.302), 0 4px 8px 3px rgba(60,64,67,0.149);
+    }
     @media screen and (min-width: 768px) {
       padding: 3% 5%;
       width: 30%;
